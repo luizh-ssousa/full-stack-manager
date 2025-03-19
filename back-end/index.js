@@ -26,6 +26,15 @@ app.get("/", (req, res) => {
     res.json("Conectado jovem Padawan!");
 });
 
+app.get("/books", async (req, res) => {
+    try {
+        const books = await Book.find();
+        res.json(books);
+    } catch (err) {
+        res.status(580).json(err);
+    }
+});
+
 app.listen(8800, () => {
     console.log("Back-end conectado!");
 });
