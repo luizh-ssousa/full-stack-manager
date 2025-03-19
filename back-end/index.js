@@ -9,7 +9,7 @@ app.use(express.json());
 mongoose.set("strictQuery", true);
 
 mongoose.connect("mongodb://localhost:27017/test", {
-    useNewUrlParse: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
