@@ -49,6 +49,34 @@ app.get("/books/:id", async (req, res) => {
   }
 });
 
+app.post("/books", async (req, res) => {
+  try {
+    const newBook = new Book(req.body);
+    const savedBook = await newBook.save();
+    res.json(savedBook);
+  } catch (error) {
+    res.status(580).json(err);
+  }
+});
+
+app.put("books/:id", async (req, res) => {
+  try {
+    const updateBook = await Book.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.json(updateBook);
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
+
+app.delete("books/:id", async (req, res) => {
+  try {
+    const deleteBook = await Book.findByIdAndDelete(req.params.id);
+    res.json(deleteBook);
+  } catch (error) {}
+});
+
 app.listen(8800, () => {
   console.log("Back-end conectado!");
 });
