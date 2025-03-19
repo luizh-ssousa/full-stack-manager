@@ -19,3 +19,13 @@ const bookSchema = new mongoose.Schema({
     price: Number,
     cover: String,
 });
+
+const Book = mongoose.model("Book", bookSchema);
+
+app.get("/", (req, res) => {
+    res.json("Conectado jovem Padawan!");
+});
+
+app.listen(8800, () => {
+    console.log("Back-end conectado!");
+});
