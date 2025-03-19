@@ -13,3 +13,9 @@ mongoose.connect("mongodb://localhost:27017/test", {
     useUnifiedTopology: true,
 });
 
+const bookSchema = new mongoose.Schema({
+    title: String,
+    desc: String,
+    price: Number,
+    cover: String,
+});
