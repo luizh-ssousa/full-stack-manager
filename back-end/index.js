@@ -31,13 +31,13 @@ app.get("/books", async (req, res) => {
     const books = await Book.find();
     res.json(books);
   } catch (err) {
-    res.status(580).json(err);
+    res.status(500).json(err);
   }
 });
 
 app.get("/books/:id", async (req, res) => {
   try {
-    const books = await Book.findById(req.params.id);
+    const book = await Book.findById(req.params.id);
     if (book) {
       res.json(book);
     } else {
@@ -45,7 +45,7 @@ app.get("/books/:id", async (req, res) => {
     }
     res.json(books);
   } catch (err) {
-    res.status(580).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -55,7 +55,7 @@ app.post("/books", async (req, res) => {
     const savedBook = await newBook.save();
     res.json(savedBook);
   } catch (error) {
-    res.status(580).json(err);
+    res.status(500).json(err);
   }
 });
 
