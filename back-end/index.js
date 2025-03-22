@@ -59,7 +59,7 @@ app.post("/books", async (req, res) => {
   }
 });
 
-app.put("books/:id", async (req, res) => {
+app.put("/books/:id", async (req, res) => {
   try {
     const updateBook = await Book.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -70,7 +70,7 @@ app.put("books/:id", async (req, res) => {
   }
 });
 
-app.delete("books/:id", async (req, res) => {
+app.delete("/books/:id", async (req, res) => {
   try {
     const deleteBook = await Book.findByIdAndDelete(req.params.id);
     res.json(deleteBook);
