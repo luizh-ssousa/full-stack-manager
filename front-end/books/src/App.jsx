@@ -8,6 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Books />} />
+          <Route path="/add" element={<AddBook />} />
         </Routes>
       </BrowserRouter>
     </div>
