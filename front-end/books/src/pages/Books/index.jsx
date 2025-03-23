@@ -33,12 +33,12 @@ const Books = () => {
       <div className="books">
         {books.map((book) => (
           <div className="book" key={book._id}>
-            <img src={""} alt="" />
+            <img src={book.cover} alt={book.title} />
             <h2>{book.title}</h2>
 
-            <p>Descrição do livro</p>
+            <p>{book.desc}</p>
 
-            <span>Preço do livro</span>
+            <span>{book.price}</span>
 
             <div className="container-buttons">
               <button className="delete">Deletar</button>
