@@ -11,12 +11,13 @@ const Books = () => {
           Adicionar Livro
         </Link>
       </button>
+
       <div className="books">
         <div className="book">
           <img src={""} alt="" />
-          <h2>nome do livro</h2>
+          <h2>Nome do livro</h2>
 
-          <p>descrição do livro</p>
+          <p>Descrição do livro</p>
 
           <span>Preço do livro</span>
 
