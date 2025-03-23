@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const UpdateBook = () => {
@@ -36,7 +37,7 @@ const UpdateBook = () => {
       
       >Atualizar</button>
       {/*error && "Algo deu errado!"*/}
-      <Link to="/">Ver todos os livros cadastradis</Link>
+      <Link to="/">Ver todos os livros cadastrados</Link>
     </div>
     )
 }
