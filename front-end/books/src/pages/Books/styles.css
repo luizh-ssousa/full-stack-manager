@@ -82,6 +82,14 @@
       background-color: #c9302c;
     }
 
+    .book .update {
+      background-color: #5bc8de;
+    }
+
+    .book .update:hover {
+      background-color: #31b8d5;
+    }
+
     .addNewBook {
       background-color: #5cb85c;
       display: block;
