@@ -43,7 +43,14 @@ const Books = () => {
 
             <div className="container-buttons">
               <button className="delete">Deletar</button>
-              <button className="update">Atualizar</button>
+              <button className="update">
+                <Link
+                  to={`/update/${book._id}`}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  Atualizar
+                </Link>
+              </button>
             </div>
           </div>
         ))}
