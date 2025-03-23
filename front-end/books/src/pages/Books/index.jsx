@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { maskPrice } from "../../helpers/functions";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -38,7 +39,7 @@ const Books = () => {
 
             <p>{book.desc}</p>
 
-            <span>{book.price}</span>
+            <span>{maskPrice(book.price)}</span>
 
             <div className="container-buttons">
               <button className="delete">Deletar</button>
