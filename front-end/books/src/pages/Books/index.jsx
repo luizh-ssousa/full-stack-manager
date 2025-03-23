@@ -21,8 +21,8 @@ const Books = () => {
           <span>Preço do livro</span>
 
           <div className="container-buttons">
-            <button>Deletar</button>
-            <button>Atualizar</button>
+            <button className="delete">Deletar</button>
+            <button className="update">Atualizar</button>
           </div>
         </div>
       </div>
