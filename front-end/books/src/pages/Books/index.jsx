@@ -14,10 +14,11 @@ const Books = () => {
       } catch (error) {
         console.log(error);
       }
-      
-    }
+    };
     fetchAllBooks();
   }, []);
+
+  console.log("books", books);
 
   return (
     <div className="ContainerBook">
@@ -30,19 +31,21 @@ const Books = () => {
       </button>
 
       <div className="books">
-        <div className="book">
-          <img src={""} alt="" />
-          <h2>Nome do livro</h2>
+        {books.map((book) => (
+          <div className="book" key={book._id}>
+            <img src={""} alt="" />
+            <h2>{book.title}</h2>
 
-          <p>Descrição do livro</p>
+            <p>Descrição do livro</p>
 
-          <span>Preço do livro</span>
+            <span>Preço do livro</span>
 
-          <div className="container-buttons">
-            <button className="delete">Deletar</button>
-            <button className="update">Atualizar</button>
+            <div className="container-buttons">
+              <button className="delete">Deletar</button>
+              <button className="update">Atualizar</button>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
