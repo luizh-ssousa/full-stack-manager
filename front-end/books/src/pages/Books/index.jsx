@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Books = () => {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      try {
+        const res = await axios.get("http://localhost:8800/books");
+        setBooks(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+      
+    }
+    fetchAllBooks();
+  }, []);
+
   return (
     <div className="ContainerBook">
       <h1>Livraria Codando Loucamente</h1>

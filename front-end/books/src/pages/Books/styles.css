@@ -101,3 +101,7 @@
   font-size: 1.2rem;
   font-weight: 700;
 }
+
+.addNewBook:hover {
+  background-color: #4cbc4c;
+}
